@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EatDebate</title>
+    <style type="text/css">
+    /*
+ * Body resets
+ *
+ * Update the foundational and global aspects of the page.
+ */
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+background: #fceabb; /* Old browsers */
+background: -moz-linear-gradient(top,  #fceabb 0%, #fccd4d 50%, #f8b500 51%, #fbdf93 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fceabb), color-stop(50%,#fccd4d), color-stop(51%,#f8b500), color-stop(100%,#fbdf93)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #fceabb 0%,#fccd4d 50%,#f8b500 51%,#fbdf93 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#fbdf93',GradientType=0 ); /* IE6-9 */
+
+}
+html {
+  font-family: Helvetica, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+@media (min-width: 38rem) {
+  html {
+    font-size: 20px;
+  }
+}
+body {
+  color: #515151;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-weight: bold;
+  line-height: 1.25;
+  color: #313131;
+  text-rendering: optimizeLegibility;
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+h3 {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+}
+h4, h5, h6 {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+/* Body text */
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+strong {
+  color: #303030;
+}
+/* Lists */
+ul, ol, dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-bottom: .5rem;
+}
+/* Misc */
+hr {
+  position: relative;
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #fff;
+}
+abbr {
+  font-size: 85%;
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+}
+abbr[title] {
+  cursor: help;
+  border-bottom: 1px dotted #e5e5e5;
+}
+/*
+ * Messages
+ *
+ * Show alert messages to users. You may add it to single elements like a `<p>`,
+ * or to a parent if there are multiple elements to show.
+ */
+.message {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  color: #717171;
+  background-color: #f9f9f9;
+}
+/*
+ * Container
+ *
+ * Center the page content.
+ */
+.container {
+  max-width: 38rem;
+  padding-left:  1rem;
+  padding-right: 1rem;
+  margin-left:  auto;
+  margin-right: auto;
+}
+</style>
+
+
+</head>
+
+<body>
+  <center><h2>EatDebate</h2>
+For when we can't decide on what to eat at a debate tournament.
+  </center>
+   <main><center>
+   <br> 
+     
+
+<script type="text/javascript">
+  var walk = ["Scott","Oxley","Red truck", "Nothing"];
+  var bus = ["Red Chile","McDonlad's", "Wendy's", "Moys","Chipotle", "Maker Pi", "Joy's Village","Philly Steak","Bibimbap","Cane's", "Subway","STARVE to DEATH","DC house","Waffle's house", "Fusion Sushi"];
+  var car = ["Asian Noodle", "PIADA", "Japanese Restaurant","Lucky Dragon"];
+function getcampusbyWalk(){
+    document.getElementById("eat").innerHTML = walk[Math.floor(Math.random() * walk.length)];
+  }
+function getcampusbyBus(){
+    document.getElementById("eat").innerHTML = bus[Math.floor(Math.random() * bus.length)];
+  }
+    function getcampusbyWheel(){
+    document.getElementById("eat").innerHTML = car[Math.floor(Math.random() * car.length)];
+}
+/*********************************************************************************************************/
+function choice(){
+			var firstChoice = document.getElementById('txtOne').value;
+			var secondChoice = document.getElementById('txtTwo').value;
+			var thirdChoice = document.getElementById('txtThree').value;
+			
+			var randNum = Math.floor(Math.random()*3+1);
+			
+			if (randNum==1){
+				document.getElementById('txtStat').innerHTML = document.getElementById('txtOne').value;
+				myReset();
+			}else if (randNum==2){
+				document.getElementById('txtStat').innerHTML = document.getElementById('txtTwo').value;
+				myReset();
+			}else if (randNum==3){
+				document.getElementById('txtStat').innerHTML = document.getElementById('txtThree').value;
+				myReset();
+			}
+			
+			function myReset(){
+				document.getElementById('txtOne').value = "";
+				document.getElementById('txtTwo').value = "";
+				document.getElementById('txtThree').value = "";
+			}
+		}
+</script>
+
+    
+     <input type="button" onclick="getcampusbyWalk()" value="campus by Walk" />
+     <input type="button" onclick="getcampusbyBus()" value="campus by bus" />
+
+      <input type="button" onclick="getcampusbyWheel()" value="campus by car" />
+     <br><br>Go eat at: <h4><div id="eat"></div></h4>
+    
+    <br><br>Or You Can:
+		 <section id="choose">
+      
+	   <br><br>
+            <h2>Let's Eat</h2>
+			<input type = "text"  id="txtOne" placeholder="Enter First Choice"><br><br>
+			<input type = "text"  id="txtTwo" placeholder="Enter Second Choice"><br><br>
+			<input type = "text"   id="txtThree" placeholder="Enter Third Choice"><br><br><br>
+			<button onClick="choice()">Choose</button> <br><br>
+			<h1 id="txtStat" style="text-align:center">Choice</h1> <br>
+			
+      </section>
+    </center></main>
+</body>
+</html>
